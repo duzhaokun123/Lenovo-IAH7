@@ -325,35 +325,35 @@ static ssize_t sensor_show(struct device* dev, struct device_attribute* devattr,
     return sprintf(buf, "%d\n", outval);
 }
 
-static ssize_t sensor_label_show(struct device* dev, struct device_attribute* attr, char* buf) {
-    int sensor_id = (to_sensor_dev_attr(attr))->index;
-    const char *label;
-
-
-    switch (sensor_id) {
-        case SENSOR_FAN1_RPM_ID:
-            label = "Fan 1\n";
-            break;
-        case SENSOR_FAN2_RPM_ID:
-            label = "Fan 2\n";
-            break;
-        default:
-            return -EOPNOTSUPP;
-    }
-
-    return sprintf(buf, label);
-}
+// static ssize_t sensor_label_show(struct device* dev, struct device_attribute* attr, char* buf) {
+//     int sensor_id = (to_sensor_dev_attr(attr))->index;
+//     const char *label;
+//
+//
+//     switch (sensor_id) {
+//         case SENSOR_FAN1_RPM_ID:
+//             label = "Fan 1\n";
+//             break;
+//         case SENSOR_FAN2_RPM_ID:
+//             label = "Fan 2\n";
+//             break;
+//         default:
+//             return -EOPNOTSUPP;
+//     }
+//
+//     return sprintf(buf, label);
+// }
 
 static SENSOR_DEVICE_ATTR_RO(fan1_input, sensor, SENSOR_FAN1_RPM_ID);
 static SENSOR_DEVICE_ATTR_RO(fan2_input, sensor, SENSOR_FAN2_RPM_ID);
-static SENSOR_DEVICE_ATTR_RO(fan1_label, sensor_label, SENSOR_FAN1_RPM_ID);
-static SENSOR_DEVICE_ATTR_RO(fan2_lable, sensor_label, SENSOR_FAN2_RPM_ID);
+// static SENSOR_DEVICE_ATTR_RO(fan1_label, sensor_label, SENSOR_FAN1_RPM_ID);
+// static SENSOR_DEVICE_ATTR_RO(fan2_lable, sensor_label, SENSOR_FAN2_RPM_ID);
 
 static struct attribute* iah7_hwmon_sensor_attrs[] = {
     &sensor_dev_attr_fan1_input.dev_attr.attr,
     &sensor_dev_attr_fan2_input.dev_attr.attr,
-    &sensor_dev_attr_fan1_label.dev_attr.attr,
-    &sensor_dev_attr_fan2_lable.dev_attr.attr,
+    // &sensor_dev_attr_fan1_label.dev_attr.attr,
+    // &sensor_dev_attr_fan2_lable.dev_attr.attr,
     NULL
 };
 
