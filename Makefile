@@ -11,7 +11,7 @@ allWarn:
 	$(MAKE) -C $(KSRC) M=$(shell pwd) KCFLAGS=-W modules
 
 clean:
-	make -C $(KSRC) M=$(shell pwd) clean
+	$(MAKE) -C $(KSRC) M=$(shell pwd) clean
 
 reloadmodule:
 	rmmod lenovo-iah7.ko || true
