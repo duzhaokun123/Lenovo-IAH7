@@ -66,7 +66,7 @@ static const struct model_config module_jycn = {
 
 static const struct dmi_system_id iah7_dmi_ids[] = {
     {
-        .ident = "Lenovo Legion Y9000X (2022) 82TF/IAH7",
+        .ident = "Lenovo Legion Y9000X (2022) IAH7/82TF",
         .matches = {
             DMI_MATCH(DMI_SYS_VENDOR, "LENOVO"),
             DMI_MATCH(DMI_PRODUCT_NAME, "82TF"),
